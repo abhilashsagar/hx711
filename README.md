@@ -4,6 +4,7 @@
 Modify the dts file for beaglebone black. 
 
 Build hx711 driver with the kernel.
+
 Usage
 
 #cd /sys/devices/platform/weight@0/iio:device0
