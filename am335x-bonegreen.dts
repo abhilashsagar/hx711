@@ -35,8 +35,8 @@
 &am33xx_pinmux {
 		weight_pins: pinmux_weight_pins {
 				pinctrl-single,pins = <
-					0x090 0x37	/* P9_12: gpio1_28 reset, INPUT_PULLUP | MODE7 */
-					0x094 0x17	/* P9_15: gpio1_16 DC, OUTPUT_PULLUP | MODE7 */
+					0x090 0x37	
+					0x094 0x17	
 				>;
 			};
 
