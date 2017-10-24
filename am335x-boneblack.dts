@@ -1,0 +1,54 @@
+/*
+ * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com/
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+/dts-v1/;
+/plugin/;
+
+#include "am33xx.dtsi"
+#include "am335x-bone-common.dtsi"
+#include "am335x-bonegreen-common.dtsi"
+
+/ {
+	model = "TI AM335x BeagleBone Green";
+	compatible = "ti,am335x-bone-green", "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx";
+
+	    weight@0 {
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&weight_pins>;
+
+
+		compatible = "avia,hx711";
+		sck-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
+		dout-gpios = <&gpio2 2 GPIO_ACTIVE_HIGH>;
+		avdd-supply =  <&vmmcsd_fixed>;
+		
+	};
+
+
+};
+
+&am33xx_pinmux {
+		weight_pins: pinmux_weight_pins {
+				pinctrl-single,pins = <
+					0x090 0x37	
+					0x094 0x17	
+				>;
+			};
+
+		};
+
+	
+&epwmss1 {
+	status = "okay";
+};
+
+&ehrpwm1 {
+	status = "okay";
+};
+
+	
